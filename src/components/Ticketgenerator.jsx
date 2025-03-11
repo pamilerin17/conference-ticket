@@ -8,13 +8,16 @@ function TicketGenerator() {
   const [ticket, setTicket] = useState(null);
 
   const generateTicket = () => {
-    if (!name || !email) {
+    if (!name || !email 
+      || !github
+    ) {
       alert("Please enter your name, email and github profile.");
       return;
     }
     setTicket({
       name,
       email,
+      github,
       conference: "Tech Summit 2025",
       ticketId: Math.random().toString(36).substr(2, 9),
     });
